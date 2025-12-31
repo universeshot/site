@@ -2,7 +2,16 @@
   const root = document.documentElement;
   const buttons = document.querySelectorAll('[data-theme-choice]');
   const storageKey = 'universeshot-theme';
-  const validChoices = new Set(['auto', 'light', 'dark', 'sunset']);
+  const validChoices = new Set([
+    'auto',
+    'light',
+    'dark',
+    'sunset',
+    'space',
+    'vaporwave',
+    'neon',
+    'arcade',
+  ]);
 
   function systemTheme() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -35,6 +44,8 @@
       if (!validChoices.has(choice)) return;
       save(choice);
       applyTheme(choice);
+      const dropdown = btn.closest('details');
+      if (dropdown) dropdown.removeAttribute('open');
     });
   });
 })();
