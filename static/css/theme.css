@@ -29,6 +29,16 @@
   --shadow: 0 12px 40px rgba(3, 6, 16, 0.45);
 }
 
+:root[data-theme="sunset"] {
+  --bg: #0f0b14;
+  --text: #fff4e8;
+  --muted: #c7b6a3;
+  --card: rgba(35, 23, 40, 0.82);
+  --accent: #ff9c6e;
+  --border: rgba(255, 156, 110, 0.26);
+  --shadow: 0 12px 40px rgba(15, 11, 20, 0.45);
+}
+
 * { box-sizing: border-box; }
 body {
   margin: 0;
