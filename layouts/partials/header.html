@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="logo">
+    <a href="/">Universe Shot</a>
+  </div>
+  <nav class="main-nav">
+    {{ with .Site.Menus.main }}
+      <ul>
+        {{ range . }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </nav>
+  <div class="header-actions">
+    <div class="theme-toggle" aria-label="Theme">
+      <button type="button" data-theme-choice="auto">Auto</button>
+      <button type="button" data-theme-choice="light">Light</button>
+      <button type="button" data-theme-choice="dark">Dark</button>
+    </div>
+  </div>
+</header>
