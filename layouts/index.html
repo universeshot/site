@@ -1,0 +1,68 @@
+{{ define "main" }}
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Universe Shot LLC</p>
+      <h1>Orientation systems for the modern computing frontier.</h1>
+      <p class="lead">We build instruments, ventures, and rhythms that keep teams aligned on mission, metrics, and momentum.</p>
+      <div class="actions">
+        <a class="button" href="/north-galaxy/">Explore North Galaxy</a>
+        <a class="button ghost" href="https://app.universeshot.com/login">Sign in</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tiles">
+    <article>
+      <h2><a href="/north-galaxy/">North Galaxy</a></h2>
+      <p>Orientation systems that connect narrative, metrics, and execution.</p>
+    </article>
+    <article>
+      <h2><a href="/matter/">Matter</a></h2>
+      <p>Ventures and products shaped by our navigation research.</p>
+    </article>
+    <article>
+      <h2><a href="/time/">Time</a></h2>
+      <p>Roadmap and cadence for what we are shipping next.</p>
+    </article>
+    <article>
+      <h2><a href="/observatory/">Observatory</a></h2>
+      <p>Notes and essays on the signals we are tracking.</p>
+    </article>
+    <article>
+      <h2><a href="/charts/">Charts</a></h2>
+      <p>Docs and diagrams that describe the architecture.</p>
+    </article>
+  </section>
+
+  <section class="recent">
+    <div class="recent-column">
+      <h3>Latest from Observatory</h3>
+      {{ $obs := site.GetPage "section" "observatory" }}
+      {{ if $obs }}
+        {{ range first 3 ($obs.Pages.ByDate.Reverse) }}
+          <article class="list-item">
+            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            {{ with .Date }}<p class="meta">{{ .Format "January 2, 2006" }}</p>{{ end }}
+            {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+          </article>
+        {{ else }}
+          <p>No observatory entries yet.</p>
+        {{ end }}
+      {{ end }}
+    </div>
+    <div class="recent-column">
+      <h3>Navigation Systems</h3>
+      {{ $ng := site.GetPage "section" "north-galaxy" }}
+      {{ if $ng }}
+        {{ range first 3 ($ng.Pages.ByTitle) }}
+          <article class="list-item">
+            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+          </article>
+        {{ else }}
+          <p>No stars published yet.</p>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

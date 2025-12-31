@@ -1,0 +1,44 @@
+baseURL = "https://universeshot.com/"
+title = "Universe Shot LLC"
+enableRobotsTXT = true
+
+[params]
+  description = "Universe Shot builds orientation systems and ventures to navigate the modern computing frontier."
+  defaultTheme = "auto"
+
+[permalinks]
+  observatory = "/observatory/:year/:month/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[[menu.main]]
+  name = "North Galaxy"
+  url = "/north-galaxy/"
+  weight = 10
+
+[[menu.main]]
+  name = "Matter"
+  url = "/matter/"
+  weight = 20
+
+[[menu.main]]
+  name = "Time"
+  url = "/time/"
+  weight = 30
+
+[[menu.main]]
+  name = "Observatory"
+  url = "/observatory/"
+  weight = 40
+
+[[menu.main]]
+  name = "Charts"
+  url = "/charts/"
+  weight = 50
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 60
