@@ -2,16 +2,18 @@
   const root = document.documentElement;
   const buttons = document.querySelectorAll('[data-theme-choice]');
   const storageKey = 'universeshot-theme';
+  const validChoices = new Set(['auto', 'light', 'dark', 'sunset']);
 
   function systemTheme() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
   function applyTheme(choice) {
-    const theme = choice === 'auto' ? systemTheme() : choice;
+    const selected = validChoices.has(choice) ? choice : 'auto';
+    const theme = selected === 'auto' ? systemTheme() : selected;
     root.setAttribute('data-theme', theme);
     buttons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.themeChoice === choice);
+      btn.classList.toggle('active', btn.dataset.themeChoice === selected);
     });
   }
 
@@ -24,12 +26,13 @@
   }
 
   const stored = load();
-  const initial = stored || 'auto';
+  const initial = validChoices.has(stored) ? stored : 'auto';
   applyTheme(initial);
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const choice = btn.dataset.themeChoice;
+      if (!validChoices.has(choice)) return;
       save(choice);
       applyTheme(choice);
     });
