@@ -39,6 +39,36 @@
   --shadow: 0 12px 40px rgba(15, 11, 20, 0.45);
 }
 
+:root[data-theme="space"] {
+  --bg: #050712;
+  --text: #e2f1ff;
+  --muted: #9ab5d6;
+  --card: rgba(12, 18, 34, 0.82);
+  --accent: #7df0ff;
+  --border: rgba(125, 240, 255, 0.28);
+  --shadow: 0 12px 44px rgba(3, 8, 22, 0.55);
+}
+
+:root[data-theme="vaporwave-grid"] {
+  --bg: #13081f;
+  --text: #f7e4ff;
+  --muted: #c6a8e2;
+  --card: rgba(29, 16, 45, 0.86);
+  --accent: #ff7edb;
+  --border: rgba(255, 126, 219, 0.32);
+  --shadow: 0 14px 46px rgba(10, 4, 24, 0.5);
+}
+
+:root[data-theme="neon-arcade"] {
+  --bg: #04080f;
+  --text: #e6f8ff;
+  --muted: #99b6d8;
+  --card: rgba(10, 14, 26, 0.86);
+  --accent: #5df7a4;
+  --border: rgba(93, 247, 164, 0.3);
+  --shadow: 0 12px 40px rgba(4, 8, 15, 0.55);
+}
+
 * { box-sizing: border-box; }
 body {
   margin: 0;
@@ -99,16 +129,36 @@ main {
 
 .header-actions { display: flex; align-items: center; gap: 0.6rem; }
 
-.theme-toggle { display: flex; gap: 0.4rem; }
-.theme-toggle button {
+.theme-toggle { display: flex; align-items: center; gap: 0.4rem; }
+.theme-toggle select {
   background: var(--card);
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
   cursor: pointer;
+  font: inherit;
+  box-shadow: var(--shadow);
+  min-width: 170px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
-.theme-toggle button.active { border-color: var(--accent); color: var(--accent); }
+.theme-toggle select:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(128, 227, 255, 0.25), var(--shadow);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
 .hero {
   background: radial-gradient(circle at 30% 20%, rgba(128, 227, 255, 0.14), transparent 40%), var(--card);

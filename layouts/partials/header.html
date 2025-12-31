@@ -12,11 +12,17 @@
     {{ end }}
   </nav>
   <div class="header-actions">
-    <div class="theme-toggle" aria-label="Theme">
-      <button type="button" data-theme-choice="auto">Auto</button>
-      <button type="button" data-theme-choice="light">Light</button>
-      <button type="button" data-theme-choice="dark">Dark</button>
-      <button type="button" data-theme-choice="sunset">Sunset</button>
-    </div>
+    <label class="theme-toggle" aria-label="Theme">
+      <span class="sr-only">Theme</span>
+      <select data-theme-select>
+        <option value="auto">Auto (System)</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="sunset">Sunset</option>
+        <option value="space">Space</option>
+        <option value="vaporwave-grid">Vaporwave Grid</option>
+        <option value="neon-arcade">Neon Arcade</option>
+      </select>
+    </label>
   </div>
 </header>

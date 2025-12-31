@@ -1,8 +1,10 @@
 (function() {
   const root = document.documentElement;
-  const buttons = document.querySelectorAll('[data-theme-choice]');
+  const select = document.querySelector('[data-theme-select]');
   const storageKey = 'universeshot-theme';
-  const validChoices = new Set(['auto', 'light', 'dark', 'sunset']);
+  const validChoices = new Set(['auto', 'light', 'dark', 'sunset', 'space', 'vaporwave-grid', 'neon-arcade']);
+
+  if (!select) return;
 
   function systemTheme() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -12,9 +14,9 @@
     const selected = validChoices.has(choice) ? choice : 'auto';
     const theme = selected === 'auto' ? systemTheme() : selected;
     root.setAttribute('data-theme', theme);
-    buttons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.themeChoice === selected);
-    });
+    if (select.value !== selected) {
+      select.value = selected;
+    }
   }
 
   function save(choice) {
@@ -29,12 +31,10 @@
   const initial = validChoices.has(stored) ? stored : 'auto';
   applyTheme(initial);
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const choice = btn.dataset.themeChoice;
-      if (!validChoices.has(choice)) return;
-      save(choice);
-      applyTheme(choice);
-    });
+  select.addEventListener('change', event => {
+    const choice = event.target.value;
+    if (!validChoices.has(choice)) return;
+    save(choice);
+    applyTheme(choice);
   });
 })();
