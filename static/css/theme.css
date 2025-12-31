@@ -65,7 +65,11 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-main { flex: 1; display: flex; }
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
 .page { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; width: 100%; }
 
 .site-header, .site-footer {
