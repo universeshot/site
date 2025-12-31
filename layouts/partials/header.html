@@ -12,11 +12,42 @@
     {{ end }}
   </nav>
   <div class="header-actions">
-    <div class="theme-toggle" aria-label="Theme">
-      <button type="button" data-theme-choice="auto">Auto</button>
-      <button type="button" data-theme-choice="light">Light</button>
-      <button type="button" data-theme-choice="dark">Dark</button>
-      <button type="button" data-theme-choice="sunset">Sunset</button>
-    </div>
+    <details class="theme-dropdown">
+      <summary class="theme-dropdown__toggle" aria-label="Theme">Theme</summary>
+      <div class="theme-dropdown__menu">
+        <button type="button" data-theme-choice="auto">
+          <span class="theme-swatch swatch-auto"></span>
+          <span class="theme-label">Auto (System)</span>
+        </button>
+        <button type="button" data-theme-choice="light">
+          <span class="theme-swatch swatch-light"></span>
+          <span class="theme-label">Light</span>
+        </button>
+        <button type="button" data-theme-choice="dark">
+          <span class="theme-swatch swatch-dark"></span>
+          <span class="theme-label">Dark</span>
+        </button>
+        <button type="button" data-theme-choice="sunset">
+          <span class="theme-swatch swatch-sunset"></span>
+          <span class="theme-label">Sunset</span>
+        </button>
+        <button type="button" data-theme-choice="space">
+          <span class="theme-swatch swatch-space"></span>
+          <span class="theme-label">Space</span>
+        </button>
+        <button type="button" data-theme-choice="vaporwave">
+          <span class="theme-swatch swatch-vaporwave"></span>
+          <span class="theme-label">Vaporwave</span>
+        </button>
+        <button type="button" data-theme-choice="neon">
+          <span class="theme-swatch swatch-neon"></span>
+          <span class="theme-label">Neon Noir</span>
+        </button>
+        <button type="button" data-theme-choice="arcade">
+          <span class="theme-swatch swatch-arcade"></span>
+          <span class="theme-label">Arcade</span>
+        </button>
+      </div>
+    </details>
   </div>
 </header>
