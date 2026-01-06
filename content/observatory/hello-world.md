@@ -5,6 +5,6 @@ summary: "Why we're building orientation systems for modern computing."
 tags: ["orientation", "systems"]
 ---
 
-Welcome to Universe Shot. We see modern computing as a constellation of fast-moving forces: new interfaces, automation, distributed teams, and volatile markets. Our job is to build the instruments that keep you pointed toward what matters.
+Welcome to Universe Shot. We see modern computing as a constellation of fast-moving forces: new interfaces, automation, distributed teams, and rapid, volatile evolution. Our job is to build the instruments that preserve meaningful direction and momentum.
 
-We'll share patterns, experiments, and releases here in the Observatory. Thanks for visiting.
+The observatory will contain blog-style posts that may not always be strictly correct. Just as a measure of hallucination is sometimes required for innovation, a measure of imagination is sometimes required to discern truth from lies - including those shaped by convenience, incentive, or deliberate concealment. Some truths sound outrageous at first, but it is better to face them than to retreat into the safety of fragility.
